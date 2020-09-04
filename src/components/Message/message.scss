@@ -1,0 +1,26 @@
+@import "./../../styles/variables";
+
+
+.message{
+  display: flex;
+  .message-avatar{
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 13px;
+      margin-bottom: 18px;
+    }
+  }
+  .text_background{
+
+    background: #6868f5;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.18);
+    border-radius: 17px 17px 17px 0;
+    .message-text{
+      color: white;
+      padding: 10px;
+      margin: 0;
+    }
+  }
+}
