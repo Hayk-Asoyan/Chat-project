@@ -11,14 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a1e7d85-8654-4c85-9bc0-7b512f87c4d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/checked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/nochecked.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Message/message.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/message.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/RegisterForm/components/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/RegisterForm/components/RegisterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/RegisterForm/containers/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/RegisterForm/containers/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +84,7 @@
       <workItem from="1599237888278" duration="12449000" />
       <workItem from="1599306432130" duration="7301000" />
       <workItem from="1599910094154" duration="15884000" />
+      <workItem from="1599927197971" duration="6235000" />
     </task>
     <servers />
   </component>

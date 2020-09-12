@@ -10,13 +10,19 @@ import ExclamationCircleTwoTone from "@ant-design/icons/lib/icons/ExclamationCir
 
 
 
-const RegisterForm = ()=> {
+const RegisterForm = props => {
+    const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isValid,
+        isSubmitting
+    } = props;
 const success = false
-        const [form] = Form.useForm();
 
-        const onFinish = values => {
-            console.log('Received values of form: ', values);
-        };
 
         return (
            <div> <div className="auth_top">
@@ -25,69 +31,46 @@ const success = false
            </div>
 <Block>
 
-    {!success? <Form
-        form={form}
-        name="register"
-        onFinish={onFinish}
-        initialValues={{
-            residence: ['zhejiang', 'hangzhou', 'xihu'],
-            prefix: '86',
-        }}
-        scrollToFirstError
-    >
-        <Form.Item
+    {!success? <Form onSubmit={handleSubmit}>
+        <Form.Item validateStatus={!touched.email ? "" : errors.email ? "error": "success"} name="email" value={values.email} help={!touched.email ? "" : errors.email } hasFeedback>
+            <Input placeholder="Էլ-փոստ" size="large"
+                   onChange={handleChange}
+                   onBlur={handleBlur}
 
-            name="email"
-
-            rules={[
-                {
-                    type: 'email',
-                    message: 'Խնդրում ենք մուտքագրել Էլ-փոստը!',
-                },
-                {
-                    required: true,
-                    message: 'Խնդրում ենք մուտքագրել Էլ-փոստը!',
-                },
-            ]}
-        >
-            <Input placeholder="Էլ-փոստ" size="large"/>
+            />
         </Form.Item>
 
         <Form.Item
-            name="password"
 
-            rules={[
-                {
-                    required: true,
-                    message: 'Խնդրում ենք մուտքագրել Գաղտնաբառը!',
-                },
-            ]}
+            validateStatus={!touched.password ? "" : errors.password ? "error": "success"} name="password" value={values.password}
+            help={!touched.password ? "" : errors.password }
             hasFeedback
         >
-            <Input.Password prefix={<LockOutlined className="site-form-item-icon" />} placeholder="Գաղտնաբառ" size="large" />
+            <Input.Password prefix={<LockOutlined
+                className="site-form-item-icon" />}
+                            placeholder="Գաղտնաբառ"
+                            size="large"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.password}
+            />
         </Form.Item>
 
         <Form.Item
-            name="confirm"
-
+            validateStatus={!touched.confirm ? "" : errors.confirm ? "error": "success"} name="confirm" value={values.confirm}
             dependencies={['password']}
+            help={!touched.confirm ? "" : errors.confirm }
             hasFeedback
-            rules={[
-                {
-                    required: true,
-                    message: 'Խնդրում ենք Հաստատել Գաղտնաբառը!',
-                },
-                ({ getFieldValue }) => ({
-                    validator(rule, value) {
-                        if (!value || getFieldValue('password') === value) {
-                            return Promise.resolve();
-                        }
-                        return Promise.reject('Երկու գաղտնաբառերը, որոնք դուք ներկայացրել եք, չեն համընկնում!');
-                    },
-                }),
-            ]}
+
         >
-            <Input.Password prefix={<LockOutlined className="site-form-item-icon" />} placeholder="Հաստատել Գաղտնաբառը" size="large"/>
+            <Input.Password prefix={<LockOutlined className="site-form-item-icon" />}
+                            placeholder="Հաստատել Գաղտնաբառը"
+                            size="large"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.password}
+
+            />
         </Form.Item>
 
         <Form.Item
@@ -99,7 +82,8 @@ const success = false
 
 
         <Form.Item>
-            <Button type="primary" htmlType="submit">
+            { isSubmitting && !isValid && <span>Սխալ</span>}
+            <Button onClick={handleSubmit} type="primary" htmlType="submit">
                 Գրանցվել
             </Button>
             Կամ <Link to="/login" >Մուտք գործել</Link >
