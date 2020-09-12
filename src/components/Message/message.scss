@@ -1,26 +1,103 @@
 @import "./../../styles/variables";
 
+$self: &;
+.message {
 
-.message{
-  display: flex;
-  .message-avatar{
-    img{
+  .message-content {
+    display: flex;
+    max-width: 440px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+
+  .message-avatar {
+    display: flex;
+    flex-direction: column-reverse;
+
+    img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
       margin-right: 13px;
       margin-bottom: 18px;
+
     }
   }
-  .text_background{
+
+  .message-attachement{
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    &-item {
+      img{
+        width: 45px;
+        height: 45px;
+        margin-right: 5px;
+        border-radius: 9px;
+      }
+    }
+  }
+.message-checked{
+  position: absolute;
+  bottom: 22px;
+  left: -17px;
+}
+  .text_background {
 
     background: #6868f5;
     box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.18);
     border-radius: 17px 17px 17px 0;
-    .message-text{
+
+
+
+    .message-text {
       color: white;
       padding: 10px;
       margin: 0;
+      font-size: 14px;
+      line-height: 20px;
     }
+
+  }
+  &--no{
+    left: -17px;
+  }
+  &--isme {
+    display: flex;
+    flex-direction: row-reverse;
+
+    #{$self}.message-content {
+      margin-bottom: 15px;
+      flex-direction: row-reverse;
+    }
+
+
+    #{$self}.message-avatar {
+      img {
+        margin-right: 0;
+        margin-left: 13px;
+      }
+
+    }
+#{$self}.message-info {
+  text-align: right;
+}
+    #{$self}.text_background {
+      background: #ffffff;
+      border: 1px solid #bbbbbb;
+      border-radius: 12px 12px 0px 12px;
+
+      #{$self}.message-text {
+        color: $black;
+
+      }
+    }
+  }
+
+  .data-message {
+    font-size: 12px;
+    opacity: 0.4;
   }
 }

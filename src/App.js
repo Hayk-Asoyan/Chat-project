@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
         <Route exact path={["/", "/login"]} component={Auth} />
+        <Route exact path='/register' component={Auth} />
         <Route exact path="/index" component={Home} />
 
 
